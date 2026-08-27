@@ -13,5 +13,13 @@ public class Promedio{
             System.out.println("Ingresa la calificación " + (i + 1) + ":");
             calificaciones[i] = sc.nextFloat();
         }
+
+        float suma = 0;
+        for (int i = 0; i < calificaciones.length; i++){
+            suma = suma + calificaciones[i];
+        }
+
+        float promedio = suma / calificaciones.length;
+        System.out.println("Promedio: " + promedio);
     }
 }
