@@ -2,31 +2,83 @@ import java.util.Scanner;
 
 public class Promedio{
 
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Nombre del estudiante; ");
-        String nombre = sc.nextLine();
-        
-        float[] calificaciones = new float[3];
-        for (int i = 0; i < 3; i++){
-            System.out.println("Ingresa la calificación " + (i + 1) + ":");
-            calificaciones[i] = sc.nextFloat();
-        }
-
+    public static float calcularPromedio(float[] calificaciones) {
         float suma = 0;
-        for (int i = 0; i < calificaciones.length; i++){
+        for (int i = 0; i < calificaciones.length; i++) {
             suma = suma + calificaciones[i];
         }
+        return suma / calificaciones.length;
+    }
 
-        float promedio = suma / calificaciones.length;
+    public static boolean estaAprobado(float promedio) {
+        return promedio >= 6.0f;
+    }
+
+    public static void mostrarResultado(String nombre, float promedio, boolean aprobado) {
+        System.out.println("Nombre: " + nombre);
         System.out.println("Promedio: " + promedio);
-
-        boolean aprobado = promedio >= 6.0f;
-        if(aprobado) {
+        if (aprobado) {
             System.out.println("Estado: APROBADO");
         } else {
             System.out.println("Estado: REPROBADO");
         }
+    }
+
+    public static boolean contieneNumero(String texto) {
+        String digitos = "0123456789";
+        for (int i = 0; i < texto.length(); i++) {
+            char letra = texto.charAt(i);
+            if (digitos.indexOf(letra) != -1) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        boolean nombreValido = false;
+        String nombre = "";
+        while (!nombreValido) {
+            System.out.println("Nombre del estudiante: ");
+            String entrada = sc.nextLine();
+
+            if (entrada.trim().isEmpty()) {
+                System.out.println("El nombre no puede quedar vacío.");
+            } else if (contieneNumero(entrada)) {
+                System.out.println("El nombre no puede contener números.");
+            } else {
+                nombre = entrada;
+                nombreValido = true;
+            }
+        }
+
+        float[] calificaciones = new float[3];
+        for (int i = 0; i < 3; i++) {
+            boolean calValida = false;
+            while (!calValida) {
+                System.out.println("Ingresa la calificación " + (i + 1) + ": ");
+                String entrada = sc.next();
+
+                try {
+                    int cal = Integer.parseInt(entrada);
+                    if (cal < 0 || cal > 10) {
+                        throw new IllegalArgumentException("La calificación debe estar entre 0 y 10 -_-");
+                    }
+                    calificaciones[i] = cal;
+                    calValida = true;
+
+                } catch (NumberFormatException e) {
+                    System.out.println("Debes ingresar un número entero (sin decimales :b)");
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Error: " + e.getMessage());
+                }
+            }
+        }
+
+        float promedio = calcularPromedio(calificaciones);
+        boolean aprobado = estaAprobado(promedio);
+        mostrarResultado(nombre, promedio, aprobado);
     }
 }
