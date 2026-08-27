@@ -6,7 +6,7 @@ public class Promedio{
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Nombre del estudiante; ");
-        String nombre = se.nextLine();
+        String nombre = sc.nextLine();
         
         float[] calificaciones = new float[3];
         for (int i = 0; i < 3; i++){
@@ -21,5 +21,12 @@ public class Promedio{
 
         float promedio = suma / calificaciones.length;
         System.out.println("Promedio: " + promedio);
+
+        boolean aprobado = promedio >= 6.0f;
+        if(aprobado) {
+            System.out.println("Estado: APROBADO");
+        } else {
+            System.out.println("Estado: REPROBADO");
+        }
     }
 }
