@@ -1,5 +1,11 @@
-Preguntas de reflexión
-- ##1 Organizar el flujo del programa utilizando ciclos o alguna estructura de control.
-- ##2 Secuencia, selección e iteración.
-- ##3 Para que se vea de manera mas ordenada el código y fácil de entender a la vista para leerlo, además que facilita su modificación y pueda ser reutilizable.
-- ##4 Se tendría que cambiar el estaAprobado cambiando el valor ya que es el encargado de determinar si el estudiante aprobó o no.
+# Preguntas de reflexión
+### 1. ¿Qué significa programar de forma estructurada? <br>
+Organizar el flujo del programa utilizando estructuras de control; además el programa se divide
+en pequeñas funciones, lo que facilita su lectura y edición. <br>
+### 2. ¿Cuáles son las tres estructuras fundamentales de control? <br>
+Seelección, secuencia e iteración. <br>
+### 3. ¿Qué ventaja tuvo separar el programa en funciones? <br>
+Cada función tiene un objetivo determinado, por lo que si se quiere modificar el código, basta con 
+editar esa función específica sin afectar el resto del programa. Además, es de ser más fácil de leer y comprender. <br>
+### 4 ¿Qué función tendría que modificarse si la calificación mínima aprobatoria cambiara? <br>
+Se tendría que modificar estaAprobado, cambiando el valor (actualmente 6) ya que es el encargado de determinar si un alumno aprobó <br>
