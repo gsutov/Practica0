@@ -2,6 +2,11 @@ import java.util.Scanner;
 
 public class Promedio{
 
+    /**
+    *Metodo publico para calcular el promedio con las 3 calificaciones dadas
+    *@param calificaciones
+    *@return promedio final de las calificaciones
+    */
     public static float calcularPromedio(float[] calificaciones) {
         float suma = 0;
         for (int i = 0; i < calificaciones.length; i++) {
@@ -10,10 +15,21 @@ public class Promedio{
         return suma / calificaciones.length;
     }
 
+    /**
+    *Metodo publico para verificar si se tiene un promedio aprobatorio
+    *@param promedio
+    *@return true si es aprobado en caso contrario false
+    */
     public static boolean estaAprobado(float promedio) {
         return promedio >= 6.0f;
     }
 
+    /**
+    *Metodo publico para mostrar el nombre y el promedio ademas de mostrar si esta aprobado o reprobado
+    *@nombre
+    *@promedio
+    *@aprobado
+    */
     public static void mostrarResultado(String nombre, float promedio, boolean aprobado) {
         System.out.println("Nombre: " + nombre);
         System.out.println("Promedio: " + promedio);
@@ -24,6 +40,11 @@ public class Promedio{
         }
     }
 
+    /**
+    *Metodo publico para ver si la cadena de texto contiene un numero
+    *@param texto
+    *@return true si hay algun numero y false si no lo hay
+    */
     public static boolean contieneNumero(String texto) {
         String digitos = "0123456789";
         for (int i = 0; i < texto.length(); i++) {
@@ -35,6 +56,11 @@ public class Promedio{
         return false;
     }
 
+    /**
+    *Metodo main para solicitar el nombre del estudiante y validar si no contiene numeros o este vacio
+    *tambien se le pide 3 calificaciones dentro del rango de 0 a 10 que seran usadas para obtener el promedio
+    *con esto se puede determinar si el alumno aprobo o reprobo mostrando el resultado final 
+    */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
