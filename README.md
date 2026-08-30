@@ -15,5 +15,5 @@ Una función es independiente de una clase y trabaja únicamente con los paráme
 Representa una captura del estado de los archivos en un momento específico. Permite generar un historial de cambios, permitiendo regresar a versiones anteriores e identificar qué se modificó en cada punto. <br>
 ### 7. ¿Por qué es preferible realizar varios commits pequeños en lugar de un solo commit al final?<br>
 Permite navegar entre las distintas versiones (o estados) del programa, y revertir una modificación específica si causó un problema
-sin alterar el resto del programa. Al ser commits pequeños, es más fácil identificar exactamente en qué modificación originó un error,
+sin alterar el resto del programa. Además, es más fácil identificar exactamente en qué modificación se originó un error,
 incluso se encontrar ese problema gracias al comando git bisect<br>
