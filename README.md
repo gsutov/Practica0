@@ -10,9 +10,10 @@ editar esa función específica sin afectar el resto del programa. Además, de s
 ### 4. ¿Qué función tendría que modificarse si la calificación mínima aprobatoria cambiara? <br>
 Se tendría que modificar estaAprobado, cambiando el valor (actualmente 6) ya que es el encargado de determinar si un alumno aprobó <br>
 ### 5. ¿Qué diferencia conceptual observa entre una función y un método? <br>
-Una función es aquella independiente a una clase la cual trabaja con los parametros que reciben, mientras un metodo pertenece a una clase y tiene acceso directo a los datos o atributos, tambien estan diferenciasdos en que todo metodo es una función pero no toda función es un metodo <br>
+Una función es independiente de una clase y trabaja únicamente con los parámetros que recibe, mientras que un método pertenece a una clase y tiene acceso directo a sus datos o atributos. También se diferencian en que todo método es una función, pero no toda función es un método.<br>
 ### 6. ¿Qué representa un commit en Git?<br>
-Hace una captura de los movimientos que le haces a tus archivos, te permite generar un historial en ellos para que puedas regresar e identificar que se hizo en ese commit<br>
-
+Representa una captura del estado de los archivos en un momento específico. Permite generar un historial de cambios, permitiendo regresar a versiones anteriores e identificar qué se modificó en cada punto. <br>
 ### 7. ¿Por qué es preferible realizar varios commits pequeños en lugar de un solo commit al final?<br>
-Para poder navegar entre las versiones del programa, logramos poder restaurarlos si una modificación causo algun problema que se necesite rebertir, ademas de que puedes encontrar ese problema gracias al comando git bisect<br>
+Permite navegar entre las distintas versiones (o estados) del programa, y revertir una modificación específica si causó un problema
+sin alterar el resto del programa. Al ser commits pequeños, es más fácil identificar exactamente en qué modificación originó un error,
+incluso se encontrar ese problema gracias al comando git bisect<br>
