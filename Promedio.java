@@ -57,6 +57,24 @@ public class Promedio{
     }
 
     /**
+    *Metodo publico para ver si la cadena de texto contiene signos
+    *@param texto
+    *@return true si hay algun signo y false si no lo hay
+    */ 
+    public static boolean contieneSigno(String texto) {
+        String signos = "!@#$%^&*()_+-=[]{}|;':\",./<>?`~¡¿\"'«»¬\\";
+        for (int i = 0; i < texto.length(); i++) {
+            char letra = texto.charAt(i);
+            if (signos.indexOf(letra) != -1) {
+                return true;
+            }
+        }
+        return false;
+    }   
+
+
+
+    /**
     *Metodo main para solicitar el nombre del estudiante y validar si no contiene numeros o este vacio
     *tambien se le pide 3 calificaciones dentro del rango de 0 a 10 que seran usadas para obtener el promedio
     *con esto se puede determinar si el alumno aprobo o reprobo mostrando el resultado final 
@@ -70,8 +88,11 @@ public class Promedio{
             System.out.println("Nombre del estudiante: ");
             String entrada = sc.nextLine();
 
+            
             if (entrada.trim().isEmpty()) {
                 System.out.println("El nombre no puede quedar vacío.");
+            } else if (contieneSigno(entrada)) {
+                System.out.println("El nombre no puede contener signos");
             } else if (contieneNumero(entrada)) {
                 System.out.println("El nombre no puede contener números.");
             } else {
